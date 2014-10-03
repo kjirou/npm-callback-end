@@ -25,7 +25,7 @@ console.log(
   wrapped(1, 2, function(){})  // -> [1, 2, function(){}]
 );
 
-// Omit a "foo" arg
+// Omit a "bar" arg
 console.log(
   wrapped(1, function(){})  // -> [1, undefined, function(){}]
 );
