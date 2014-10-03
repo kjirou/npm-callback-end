@@ -1,0 +1,30 @@
+{
+  "name": "callback-end",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjirou/npm-callback-end"
+  },
+  "main": "index.js",
+  "description": "",
+  "version": "0.0.1",
+  "author": "kjirou",
+  "keywords": [
+    "overload",
+    "wrapper",
+    "callback"
+  ],
+  "engines": {
+    "node": ">=0.10 <0.12"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jshint": "2.5.5",
+    "mocha": "1.21.4"
+  },
+  "scripts": {
+    "ci": "mocha",
+    "jshint": "jshint index.js lib/callback-end.js test/tests.js",
+    "test": "mocha && npm run jshint"
+  }
+}
