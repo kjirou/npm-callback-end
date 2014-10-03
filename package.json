@@ -6,7 +6,7 @@
   },
   "main": "index.js",
   "description": "By wrapping the function that sets the last callback, so that you can omit the argument when calling.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "kjirou",
   "keywords": [
     "overload",
