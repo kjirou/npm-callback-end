@@ -1,4 +1,4 @@
-callback-end
+callback-end [![Build Status](https://travis-ci.org/kjirou/npm-callback-end.svg?branch=master)](https://travis-ci.org/kjirou/npm-callback-end)
 ============
 
 By wrapping the function that sets the last callback, so that you can omit the argument when calling.
