@@ -1,12 +1,12 @@
 var assert = require('assert');
 
-var blocklike = require('../index');
+var callbackEnd = require('../index');
 
 
-describe('blocklike', function(){
+describe('callbackEnd', function(){
 
   it('Module definition', function(){
-    assert(typeof blocklike === 'function');
+    assert(typeof callbackEnd === 'function');
   });
 
   it('Wrap a function', function(){
@@ -20,7 +20,7 @@ describe('blocklike', function(){
       [2, 3, cb]
     );
 
-    var wrapped = blocklike(func);
+    var wrapped = callbackEnd(func);
     assert.deepEqual(
       wrapped(2, 3, cb),
       [2, 3, cb]
@@ -38,7 +38,7 @@ describe('blocklike', function(){
   });
 
   it('Should do nothing if callback was not given at the end of args', function(){
-    var wrapped = blocklike(function(a, b, c, cb){
+    var wrapped = callbackEnd(function(a, b, c, cb){
       return Array.prototype.slice.apply(arguments);
     });
     var foo = function(){};
@@ -49,7 +49,7 @@ describe('blocklike', function(){
   });
 
   it('Should keep dynamic scope', function(){
-    var wrapped = blocklike(function(a, b, cb){
+    var wrapped = callbackEnd(function(a, b, cb){
       return cb(this.x * a * b);
     });
 
