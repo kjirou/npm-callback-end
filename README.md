@@ -1,22 +1,37 @@
-wantit [![Build Status](https://travis-ci.org/kjirou/npm-wantit.svg?branch=master)](https://travis-ci.org/kjirou/npm-wantit)
-======
+callback-end
+============
 
-Execute "require" without MODULE_NOT_FOUND error.
-
-
-## Examples
-```
-var wantit = require('wantit');
-
-// Return "util" module like "require" method
-var util = wantit('util');
-
-// Error is not occured, it returns null
-var moduleNotFound = wantit('module_not_found');
-```
+By wrapping the function that sets the last callback, so that you can omit the argument when calling.
 
 
 ## Installation
 ```
-npm install wantit
+npm install callback-end
+```
+
+
+## Examples
+```
+var callbackEnd = require('callback-end');
+
+
+var func = function(foo, bar, cb){
+  return Array.prototype.slice.apply(arguments);
+};
+
+var wrapped = callbackEnd(func);
+
+console.log(
+  wrapped(1, 2, function(){})  // -> [1, 2, function(){}]
+);
+
+// Omit a "foo" arg
+console.log(
+  wrapped(1, function(){})  // -> [1, undefined, function(){}]
+);
+
+// Omit "foo" and "bar" args
+console.log(
+  wrapped(function(){})  // -> [undefined, undefined, function(){}]
+);
 ```

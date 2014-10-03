@@ -5,7 +5,7 @@
     "url": "https://github.com/kjirou/npm-callback-end"
   },
   "main": "index.js",
-  "description": "",
+  "description": "By wrapping the function that sets the last callback, so that you can omit the argument when calling.",
   "version": "0.0.1",
   "author": "kjirou",
   "keywords": [
